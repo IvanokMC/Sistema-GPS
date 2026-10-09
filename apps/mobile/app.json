@@ -1,0 +1,71 @@
+{
+  "expo": {
+    "name": "Rastreo GPS",
+    "slug": "gps-tracker",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "dark",
+    "scheme": "gpstracker",
+    "newArchEnabled": true,
+    "splash": {
+      "resizeMode": "contain",
+      "backgroundColor": "#0f172a"
+    },
+    "android": {
+      "package": "pe.edu.unsaac.gpstracker",
+      "versionCode": 1,
+      "adaptiveIcon": {
+        "backgroundColor": "#0f172a"
+      },
+      "permissions": [
+        "ACCESS_COARSE_LOCATION",
+        "ACCESS_FINE_LOCATION",
+        "ACCESS_BACKGROUND_LOCATION",
+        "FOREGROUND_SERVICE",
+        "FOREGROUND_SERVICE_LOCATION",
+        "POST_NOTIFICATIONS",
+        "WAKE_LOCK",
+        "INTERNET",
+        "android.permission.ACCESS_COARSE_LOCATION",
+        "android.permission.ACCESS_FINE_LOCATION",
+        "android.permission.ACCESS_BACKGROUND_LOCATION",
+        "android.permission.FOREGROUND_SERVICE",
+        "android.permission.FOREGROUND_SERVICE_LOCATION"
+      ],
+      "usesCleartextTraffic": true
+    },
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "pe.edu.unsaac.gpstracker",
+      "infoPlist": {
+        "UIBackgroundModes": [
+          "location",
+          "fetch"
+        ],
+        "NSLocationWhenInUseUsageDescription": "La app usa tu ubicacion para mostrar tu posicion en el mapa en tiempo real.",
+        "NSLocationAlwaysAndWhenInUseUsageDescription": "La app necesita tu ubicacion en segundo plano para seguir registrando el recorrido con la pantalla apagada."
+      }
+    },
+    "web": {
+      "bundler": "metro",
+      "output": "single"
+    },
+    "plugins": [
+      [
+        "expo-location",
+        {
+          "locationAlwaysAndWhenInUsePermission": "La app necesita tu ubicacion en segundo plano para registrar el recorrido con la pantalla apagada.",
+          "locationWhenInUsePermission": "La app usa tu ubicacion para mostrar tu posicion en tiempo real.",
+          "isAndroidBackgroundLocationEnabled": true,
+          "isAndroidForegroundServiceEnabled": true
+        }
+      ]
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "c91fdf69-f34a-4920-95fb-ff996ae41206"
+      }
+    },
+    "owner": "ivanokmc"
+  }
+}

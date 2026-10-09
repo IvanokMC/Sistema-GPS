@@ -1,0 +1,40 @@
+{
+  "name": "@gps/mobile",
+  "version": "1.0.0",
+  "private": true,
+  "main": "index.js",
+  "scripts": {
+    "start": "expo start",
+    "android": "expo run:android",
+    "web": "expo start --web",
+    "prebuild": "expo prebuild --platform android --clean",
+    "apk": "eas build --platform android --profile preview",
+    "doctor": "npx expo-doctor",
+    "ios": "expo run:ios"
+  },
+  "dependencies": {
+    "@expo/metro-runtime": "~4.0.1",
+    "@gps/shared": "*",
+    "@react-native-async-storage/async-storage": "1.23.1",
+    "expo": "~52.0.27",
+    "expo-asset": "~11.0.5",
+    "expo-battery": "~9.0.2",
+    "expo-constants": "~17.0.4",
+    "expo-device": "~7.0.2",
+    "expo-file-system": "~18.0.12",
+    "expo-font": "~13.0.4",
+    "expo-keep-awake": "~14.0.2",
+    "expo-location": "~18.0.5",
+    "expo-status-bar": "~2.0.1",
+    "expo-task-manager": "~12.0.5",
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
+    "react-native": "0.76.6",
+    "react-native-web": "~0.19.13"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.26.0",
+    "@types/react": "~18.3.12",
+    "typescript": "^5.7.3"
+  }
+}
