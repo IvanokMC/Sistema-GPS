@@ -1,0 +1,35 @@
+{
+  "name": "gpstracker",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Sistema de rastreo GPS en tiempo real multiplataforma (Android/iOS/Web) sobre AWS serverless",
+  "workspaces": [
+    "packages/*",
+    "apps/web",
+    "apps/mobile",
+    "services/backend",
+    "infra",
+    "tools/local-server"
+  ],
+  "scripts": {
+    "build:shared": "npm run build -w @gps/shared",
+    "dev:server": "npm run dev -w @gps/local-server",
+    "dev:web": "npm run dev -w @gps/web",
+    "dev:mobile": "npm run start -w @gps/mobile",
+    "dev": "npm run build:shared && concurrently -n server,web -c cyan,magenta \"npm:dev:server\" \"npm:dev:web\"",
+    "build": "npm run build:shared && npm run build -w @gps/web && npm run build -w @gps/backend",
+    "typecheck": "npm run build:shared && tsc -p services/backend/tsconfig.json --noEmit false --outDir services/backend/dist && tsc -p apps/web/tsconfig.json && tsc -p infra/tsconfig.json && tsc -p apps/mobile/tsconfig.json",
+    "deploy": "npm run build:shared && npm run deploy -w @gps/infra",
+    "destroy": "npm run destroy -w @gps/infra",
+    "verificar-red": "node tools/verificar-red.mjs",
+    "servir-apk": "node tools/servir-apk.mjs",
+    "apk:local": "cd apps/mobile/android && gradlew assembleRelease"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2",
+    "typescript": "^5.7.3"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

@@ -1,0 +1,34 @@
+node_modules/
+dist/
+build/
+.expo/
+.expo-shared/
+cdk.out/
+*.tsbuildinfo
+.env
+.env.local
+*.apk
+*.aab
+.DS_Store
+Thumbs.db
+
+# Capturas sueltas sin procesar: pantallaso2 contiene la contraseña del WiFi
+# en texto claro. La versión censurada vive en docs/evidencias/.
+docs/pantallaso*.jpeg
+
+# Token de acceso al backend desplegado. Es una credencial.
+.aws-token.txt
+
+# Registros de compilacion, despliegue y servidores locales.
+*.log
+
+# Variantes de .env con valores reales (las plantillas .env.example si se versionan).
+.env.*
+!.env.example
+# Credenciales de escritura (celular) y lectura (dashboard) del backend.
+.aws-*.txt
+
+
+# Configuracion local del editor.
+.idea/
+.vscode/
