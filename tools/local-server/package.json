@@ -1,0 +1,14 @@
+{
+  "name": "@gps/local-server",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "node server.js",
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "@gps/shared": "*",
+    "ws": "^8.18.0"
+  }
+}
